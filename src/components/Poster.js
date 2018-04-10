@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const containerStyle = {
     overflow: 'hidden',
-    'text-align': 'center',
-    'border-radius': '5px',
+    'margin': '48px auto',
+    'width': '300px',
+    'border-radius': '6px',
 }
 
 const imgStyle = {
-    width: '250px'
+    width: '300px'
 }
 
 const Poster = (props) => {

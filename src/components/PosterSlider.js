@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import Carousel from 'nuka-carousel';
+import React from 'react';
+import Slider from 'react-slick';
 import Poster from './Poster';
 
 const PosterSlider = (props) => {
+    const settings = {
+        infinite: false,
+        slidesToShow: 3,
+        centerMode: true,
+    }
     return (
-        <Carousel renderBottomCenterControls={false} renderCenterLeftControls={false} renderCenterRightControls={false} cellAlign="center" slideWidth="300px">
-            <Poster src="http://placehold.it/1000x400/ffffff/c0392b/&text=poster 1" />
-            <Poster src="http://placehold.it/1000x400/ffffff/c0392b/&text=poster 2" />
-            <Poster src="http://placehold.it/1000x400/ffffff/c0392b/&text=poster 3" />
-            <Poster src="http://placehold.it/1000x400/ffffff/c0392b/&text=poster 4" />
-            <Poster src="http://placehold.it/1000x400/ffffff/c0392b/&text=poster 5" />
-            <Poster src="http://placehold.it/1000x400/ffffff/c0392b/&text=poster 6" />
-        </Carousel>
+        <Slider {...settings}>
+            {props.movies.map((m,i) => <Poster key={i} src={m.Poster} />)}
+        </Slider>
     );
 }
 
